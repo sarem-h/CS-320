@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/eW6QaYEqOg=",
+  "dgSpecHash": "HZ5Evjkw+R4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
+  "projectFilePath": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sarem\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\sarem\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",

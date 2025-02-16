@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {}
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
+        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
         "projectName": "MyCookBookApi",
-        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
+        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
         "packagesPath": "C:\\Users\\sarem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\obj\\",
+        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApi\\MyCookBookApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
