@@ -1,11 +1,11 @@
-# MyCookBookApp 🍽️  
+# MyCookBookApp 🍽️
 
-Welcome to **MyCookBookApp**, a web application where you can explore delicious recipes and dietary options.  
+Welcome to **MyCookBookApp**, a web application where you can explore delicious recipes and dietary options.
 
 ## 🔗 Live Preview  
-Check out the live website here: [MyCookBookApp]([YOUR_LIVE_WEBSITE_URL](https://cs320.bsite.net/))  
+Check out the live website here: [MyCookBookApp](https://cs320.bsite.net/)
 
-![Preview]([YOUR_PREVIEW_IMAGE_URL](https://paste.pics/STN6C))  
+![Preview](https://paste.pics/STN6C)
 
 ## 🚀 Features  
 - Browse a variety of recipes  
