@@ -6,7 +6,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5282")
+        builder => builder.WithOrigins("https://cs320.bsite.net")
                           .AllowAnyHeader()
                           .AllowAnyMethod());
 });

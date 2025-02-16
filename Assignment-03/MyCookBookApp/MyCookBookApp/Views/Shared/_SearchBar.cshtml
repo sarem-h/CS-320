@@ -126,7 +126,7 @@
                             item.id = `alex-${recipe.id}`;
                             item.textContent = recipe.name;
                             item.addEventListener('click', () => {
-                                window.location.href = `http://localhost:5282/recipes/${recipe.id}`;
+                                window.location.href = `https://cs320.bsite.net/recipes/${recipe.id}`;
                             });
                             dropdown.appendChild(item);
                         });
@@ -153,7 +153,7 @@
                                 item.id = `mealdb-${meal.idMeal}`;
                                 item.textContent = meal.strMeal;
                                 item.addEventListener('click', () => {
-                                    window.location.href = `http://localhost:5282/recipes/${meal.idMeal}`;
+                                    window.location.href = `https://cs320.bsite.net/recipes/${meal.idMeal}`;
                                 });
                                 dropdown.appendChild(item);
                             });

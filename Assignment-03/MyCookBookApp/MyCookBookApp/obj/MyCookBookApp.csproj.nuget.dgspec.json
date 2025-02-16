@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {}
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
+        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
         "projectName": "MyCookBookApp",
-        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
+        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
         "packagesPath": "C:\\Users\\sarem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\obj\\",
+        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-03\\MyCookBookApp\\MyCookBookApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
