@@ -24,7 +24,7 @@
             try {
                 let response, data;
                 if (idMeal.startsWith("0000")) {
-                    response = await fetch(`http://localhost:5085/api/recipe?search=${idMeal}`);
+                    response = await fetch(`https://cs320.bsite.net/api/recipe?search=${idMeal}`);
                     data = await response.json();
                     return data[0];
                 } else {
