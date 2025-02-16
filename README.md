@@ -3,9 +3,7 @@
 Welcome to **MyCookBookApp**, a web application where you can explore delicious recipes and dietary options.
 
 ## 🔗 Live Preview  
-Check out the live website here: <a href="https://cs320.bsite.net/" target="_blank">MyCookBookApp</a>
-
-![Preview](https://paste.pics/STN6C)
+Check out the live website here: [cs320.bsite.net](https://cs320.bsite.net/)
 
 ## 🚀 Features  
 - Browse a variety of recipes  
