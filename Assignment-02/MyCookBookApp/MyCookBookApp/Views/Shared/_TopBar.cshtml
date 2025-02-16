@@ -1,0 +1,142 @@
+﻿@* _TopBar.cshtml *@
+@{
+	var menuLayout = "flex-row"; // Default layout
+}
+
+<style>
+	.custom-top-bar {
+		font-family: 'Arial, sans-serif';
+		font-size: 16px;
+		border-bottom: 1px solid #00000029;
+	}
+
+		.custom-top-bar .navbar-nav {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.custom-top-bar .custom-padding {
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		.custom-top-bar .reduced-padding {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.custom-top-bar .custom-menu li {
+			margin: 10px;
+		}
+
+		.custom-top-bar .custom-toggler {
+			font-size: 41px;
+			cursor: pointer;
+		}
+
+	/* Overlay for darkening the main content */
+	.overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: 1040;
+	}
+
+		.overlay.show {
+			display: block;
+		}
+</style>
+
+<nav class="navbar navbar-light bg-transparent custom-top-bar py-3 mt-2">
+	<div class="container-fluid custom-padding" id="topBarContainer">
+		<div class="d-flex justify-content-between w-100">
+			@Html.Partial("_Logo")
+			<span class="d-lg-none material-symbols-outlined custom-toggler" onclick="toggleNavbar()" aria-label="Toggle navigation">
+				menu
+			</span>
+			<div class="d-none d-lg-flex w-100 align-items-center" id="menuContainer">
+				@Html.Partial("_Menu", menuLayout)
+				@Html.Partial("_SearchBar")
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+@Html.Partial("_CustomCollapse")
+
+<input type="hidden" id="menuLayout" value="@menuLayout" />
+
+<script>
+	function toggleNavbar() {
+		var navbar = document.getElementById('customNavbar');
+		var overlay = document.getElementById('overlay');
+		var menuContainer = document.getElementById('menuContainer');
+		var topBarContainer = document.getElementById('topBarContainer');
+
+		if (navbar.classList.contains('show')) {
+			navbar.classList.remove('show');
+			overlay.classList.remove('show');
+			menuContainer.classList.remove('flex-column');
+			menuContainer.classList.add('flex-row');
+			topBarContainer.classList.remove('reduced-padding');
+		} else {
+			navbar.classList.add('show');
+			overlay.classList.add('show');
+			menuContainer.classList.remove('flex-row');
+			menuContainer.classList.add('flex-column');
+			topBarContainer.classList.add('reduced-padding');
+		}
+	}
+
+	// Close the custom collapse body when clicking outside of it
+	document.addEventListener('click', function(event) {
+		var navbar = document.getElementById('customNavbar');
+		var overlay = document.getElementById('overlay');
+		var customCollapse = document.getElementById('customCollapse');
+		var toggler = document.querySelector('.custom-toggler');
+		var topBarContainer = document.getElementById('topBarContainer');
+		if (!navbar.contains(event.target) && !toggler.contains(event.target)) {
+			navbar.classList.remove('show');
+			overlay.classList.remove('show');
+			customCollapse.classList.remove('show');
+			var menuContainer = document.getElementById('menuContainer');
+			menuContainer.classList.remove('flex-column');
+			menuContainer.classList.add('flex-row');
+			topBarContainer.classList.remove('reduced-padding');
+		}
+	});
+
+	// Update the menu layout on window resize
+	window.addEventListener('resize', function() {
+		var menuContainer = document.getElementById('menuContainer');
+		var topBarContainer = document.getElementById('topBarContainer');
+		if (window.innerWidth >= 992) {
+			menuContainer.classList.remove('flex-column');
+			menuContainer.classList.add('flex-row');
+			topBarContainer.classList.remove('reduced-padding');
+		} else {
+			menuContainer.classList.remove('flex-row');
+			menuContainer.classList.add('flex-column');
+			topBarContainer.classList.add('reduced-padding');
+		}
+	});
+
+	// Initial layout setup
+	document.addEventListener('DOMContentLoaded', function() {
+		var menuContainer = document.getElementById('menuContainer');
+		var topBarContainer = document.getElementById('topBarContainer');
+		if (window.innerWidth >= 992) {
+			menuContainer.classList.add('flex-row');
+			topBarContainer.classList.remove('reduced-padding');
+		} else {
+			menuContainer.classList.add('flex-column');
+			topBarContainer.classList.add('reduced-padding');
+		}
+	});
+</script>

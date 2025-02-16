@@ -1,0 +1,187 @@
+﻿@* _SearchBar.cshtml *@
+@{
+    var searchBarId = !string.IsNullOrEmpty(ViewData["SearchBarId"] as string) ? ViewData["SearchBarId"] : "search-bar";
+    var inputId = $"{searchBarId}-input";
+    var dropdownId = $"{searchBarId}-dropdown";
+}
+
+<style>
+    .search-bar-form .dining-icon {
+        padding-right: 11px;
+    }
+
+    .search-bar-form .no-transition {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .search-bar-form .custom-font {
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .search-bar-form .border-bottom-only {
+        border: none;
+        border-radius: 0px;
+        border-bottom: 1px solid #000;
+    }
+
+        .search-bar-form .border-bottom-only:focus {
+            border-bottom-color: #000;
+            box-shadow: none;
+        }
+
+    .search-bar-form .search-icon:hover {
+        color: #dc3545;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        float: left;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        margin: 0.125rem 0 0;
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.25rem;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.25rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+        .dropdown-item:hover {
+            color: #16181b;
+            text-decoration: none;
+            background-color: #f8f9fa;
+        }
+</style>
+
+<form class="d-flex justify-content-center align-items-center search-bar-form position-relative" id="@searchBarId">
+    <span class="material-symbols-outlined dining-icon">
+        ramen_dining
+    </span>
+    <input id="@inputId" class="form-control me-2 no-transition border-bottom-only bg-transparent custom-font" type="search" placeholder="search recipes, etc ..." aria-label="Search">
+    <span class="d-flex material-symbols-outlined search-icon">
+        search
+    </span>
+    <ul class="dropdown-menu" id="@dropdownId"></ul>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
+        }
+
+        const searchInput = document.getElementById('@inputId');
+        const dropdown = document.getElementById('@dropdownId');
+
+        searchInput.addEventListener('input', debounce(function() {
+            const query = searchInput.value;
+            if (query.length > 0) {
+                dropdown.innerHTML = '';
+                let foundRecipes = false;
+
+                // Fetch from RecipeController
+                fetch(`http://localhost:5085/api/recipe?search=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        foundRecipes = true;
+                        const alexRecipesHeader = document.createElement('li');
+                        alexRecipesHeader.className = 'dropdown-header';
+                        alexRecipesHeader.textContent = "Alex's Recipes";
+                        dropdown.appendChild(alexRecipesHeader);
+
+                        data.forEach(recipe => {
+                            const item = document.createElement('li');
+                            item.className = 'dropdown-item';
+                            item.id = `alex-${recipe.id}`;
+                            item.textContent = recipe.name;
+                            item.addEventListener('click', () => {
+                                window.location.href = `http://localhost:5282/recipes/${recipe.id}`;
+                            });
+                            dropdown.appendChild(item);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching Alex\'s recipes:', error);
+                })
+                .finally(() => {
+                    // Fetch from themealdb
+                    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.meals) {
+                            foundRecipes = true;
+                            const otherRecipesHeader = document.createElement('li');
+                            otherRecipesHeader.className = 'dropdown-header';
+                            otherRecipesHeader.textContent = "Other Recipes";
+                            dropdown.appendChild(otherRecipesHeader);
+
+                            data.meals.forEach(meal => {
+                                const item = document.createElement('li');
+                                item.className = 'dropdown-item';
+                                item.id = `mealdb-${meal.idMeal}`;
+                                item.textContent = meal.strMeal;
+                                item.addEventListener('click', () => {
+                                    window.location.href = `http://localhost:5282/recipes/${meal.idMeal}`;
+                                });
+                                dropdown.appendChild(item);
+                            });
+                        }
+
+                        if (!foundRecipes) {
+                            const noRecipesItem = document.createElement('li');
+                            noRecipesItem.className = 'dropdown-item';
+                            noRecipesItem.textContent = 'No recipes found';
+                            dropdown.appendChild(noRecipesItem);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching other recipes:', error);
+                    });
+
+                    dropdown.style.display = 'block';
+                });
+            } else {
+                dropdown.style.display = 'none';
+            }
+        }, 300)); // Adjust the debounce delay as needed
+
+        document.addEventListener('click', function(event) {
+            if (!searchInput.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    });
+</script>
+

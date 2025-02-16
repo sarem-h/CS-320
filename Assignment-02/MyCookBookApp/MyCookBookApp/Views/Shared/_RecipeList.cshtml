@@ -1,0 +1,125 @@
+﻿@* _RecipeList.cshtml *@
+
+<style>
+	.recipe-list-con {
+		position: relative;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 15px 50px;
+		margin-top: 15px;
+	}
+
+	@@media (min-width: 1585px) {
+		.recipe-list-con
+
+	{
+		padding: 15px 250px;
+	}
+
+	}
+
+	.recipe-list-con .current-recipe-list-name {
+		column-gap: 10px;
+		font-size: 20px;
+		font-weight: 600;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.recipe-list {
+		position: relative;
+		row-gap: 12px;
+		width: 240px;
+		max-height: 350px;
+		font-size: 17px;
+		font-family: 'Montserrat', sans-serif;
+		line-height: 1.4098em;
+		margin: 17px 20px 17px 0;
+		cursor: pointer;
+	}
+
+		.recipe-list:hover .overlap {
+			display: flex !important;
+		}
+
+		.recipe-list .img-con {
+			position: relative;
+		}
+
+			.recipe-list .img-con img {
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+
+		.recipe-list .overlap {
+			display: none !important;
+			position: absolute;
+			top: 0%;
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+			.recipe-list .overlap span {
+				color: #fff;
+			}
+</style>
+
+<div class="d-flex flex-column justify-content-center recipe-list-con">
+	<h2 class="d-flex align-items-center my-2 current-recipe-list-name">
+		<span class="material-symbols-outlined dining-icon">
+			ramen_dining
+		</span>
+		All Recipes
+	</h2>
+	<div id="recipe-list-container" class="d-flex flex-wrap"></div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+		.then(response => response.json())
+		.then(data => {
+			const meals = data.meals;
+			const container = document.getElementById('recipe-list-container');
+
+			meals.forEach(meal => {
+				const recipeItem = document.createElement('div');
+				recipeItem.className = 'd-flex flex-column recipe-list';
+				recipeItem.addEventListener('click', () => {
+					window.location.href = `/recipes/${meal.idMeal}`;
+				});
+
+				const imgCon = document.createElement('div');
+				imgCon.className = 'img-con';
+
+				const img = document.createElement('img');
+				img.src = meal.strMealThumb;
+				img.alt = meal.strMeal;
+
+				const overlap = document.createElement('div');
+				overlap.className = 'd-flex justify-content-center align-items-center overlap';
+
+				const span = document.createElement('span');
+				span.className = 'material-symbols-outlined';
+				span.textContent = 'skillet';
+
+				overlap.appendChild(span);
+				imgCon.appendChild(img);
+				imgCon.appendChild(overlap);
+
+				recipeItem.appendChild(imgCon);
+				recipeItem.appendChild(document.createTextNode(meal.strMeal));
+
+				container.appendChild(recipeItem);
+			});
+		})
+		.catch(error => console.error('Error fetching meals:', error));
+	});
+</script>
+
+
+
+

@@ -1,0 +1,21 @@
+﻿@* _About.cshtml *@
+@{
+	ViewData["Title"] = "about";
+}
+
+<style>
+	@@media (max-width: 1117px) {
+		.about-con .about-content {
+			margin-right: 0 !important;
+		}
+
+		.about-con .explore-recipe-con {
+			width: 778px;
+		}
+	}
+</style>
+
+<div class="d-flex flex-row flex-wrap justify-content-center m-5 about-con">
+	@Html.Partial("_AboutContent")
+	@Html.Partial("_ExploreRecipe")
+</div>

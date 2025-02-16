@@ -1,0 +1,119 @@
+﻿@* _Slogan.cshtml *@
+
+<link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+	.slogan-text-con {
+		width: fit-content;
+		font-family: "Rouge Script", serif;
+		font-weight: 400;
+		font-style: normal;
+		color: #734060;
+		text-align: center;
+	}
+
+		.slogan-text-con .slogan-text {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.slogan-text-con .material-symbols-outlined {
+			margin: auto 10px;
+			transform: rotate(180deg);
+		}
+
+		.slogan-text-con .custom-span {
+			font-weight: bold;
+			font-family: 'Bona Nova SC', sans-serif;
+			color: #000;
+		}
+
+	/* Custom sizes for different window sizes */
+	@@media (min-width: 1200px) { /* lg */
+		.slogan-text-con
+
+	{
+		font-size: 3vw;
+	}
+
+	.slogan-text-con .material-symbols-outlined {
+		font-size: 2.5vw;
+	}
+
+	.slogan-text-con .custom-span {
+		font-size: 1.8vw;
+	}
+
+	}
+
+	@@media (min-width: 992px) and (max-width: 1199.98px) { /* md */
+		.slogan-text-con
+
+	{
+		font-size: 3vw;
+	}
+
+	.slogan-text-con .material-symbols-outlined {
+		font-size: 3vw;
+	}
+
+	.slogan-text-con .custom-span {
+		font-size: 2.5vw;
+	}
+
+	}
+
+	@@media (max-width: 991.98px) { /* sm */
+		.slogan-text-con
+
+	{
+		font-size: 5vw;
+	}
+
+	.slogan-text-con .material-symbols-outlined {
+		font-size: 5vw;
+	}
+
+	.slogan-text-con .custom-span {
+		font-size: 3vw;
+	}
+
+	}
+
+	@@media (max-width: 575.98px) { /* xs */
+		.slogan-text-con
+
+	{
+		font-size: 8.5vw;
+	}
+
+	.slogan-text-con .material-symbols-outlined {
+		font-size: 8.5vw;
+	}
+
+	.slogan-text-con .custom-span {
+		font-size: 4vw;
+	}
+
+	}
+</style>
+
+<div class="d-flex mx-auto mt-4 py-2 slogan-text-con">
+	<p class="slogan-text">
+		<span class="material-symbols-outlined">
+			air
+		</span>
+		Practical recipes for:
+		<span class="d-none d-md-inline">&nbsp;</span>
+		<span class="d-inline d-md-none w-100"></span>
+		<span class="custom-span">
+			everyday moments!
+		</span>
+	</p>
+</div>
+
+
+
+
