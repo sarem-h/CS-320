@@ -110,7 +110,7 @@
                 let foundRecipes = false;
 
                 // Fetch from RecipeController
-                fetch(`https://cs320.bsite.net/api/recipe?search=${query}`)
+                fetch(`https://cs320api.bsite.net/api/recipe?search=${query}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.length > 0) {
