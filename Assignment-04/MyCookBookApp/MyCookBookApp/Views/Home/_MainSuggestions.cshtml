@@ -1,0 +1,131 @@
+﻿@* _MainSuggestions.cshtml *@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<style>
+	.suggestion-con {
+		width: 100%;
+		padding-top: 20px;
+		background-color: #f7f7f7;
+	}
+
+		.suggestion-con .swiper-container {
+			width: fit-content;
+			height: fit-content;
+			max-height: 400px;
+			overflow: hidden;
+			padding-left: 18px;
+		}
+
+		.suggestion-con .swiper-wrapper {
+			display: flex;
+		}
+
+		.suggestion-con .swiper-slide {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			cursor: pointer;
+			margin-right: 26px;
+			margin-bottom: 20px;
+			width: auto;
+			flex: 0 0 auto; /* Prevent slides from shrinking */
+			position: relative;
+		}
+
+			.suggestion-con .swiper-slide:hover .suggestion-name-con {
+				top: 45%;
+				font-size: 18px;
+				font-weight: bold;
+				font-family: 'Montserrat', sans-serif;
+				color: #fff;
+				background-color: transparent;
+			}
+
+			.suggestion-con .swiper-slide:hover .custom-img {
+				transform: scale(1.1);
+				filter: brightness(50%)
+			}
+
+		.suggestion-con .custom-img {
+			width: 262px;
+			height: 363px;
+			max-height: 363px;
+			object-fit: cover;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.suggestion-con .suggestion-name-con {
+			position: absolute;
+			top: 93%;
+			width: fit-content;
+			padding: 8px;
+			font-size: 13px;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;
+			text-align: center;
+			background-color: #72a0ad;
+		}
+</style>
+
+<div class="d-flex justify-content-center suggestion-con">
+	<div class="swiper-container">
+		<div class="swiper-wrapper" id="suggestion-wrapper"></div>
+	</div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				hide: true,
+			},
+			breakpoints: {
+			}
+		});
+
+		const suggestionWrapper = document.getElementById('suggestion-wrapper');
+		const fetchedMeals = new Set();
+		const maxSuggestions = 4;
+
+		function fetchRandomMeal() {
+			return fetch('http://localhost:5085/api/recipe')
+				.then(response => response.json())
+				.then(data => data[Math.floor(Math.random() * data.length)]);
+		}
+
+		async function loadSuggestions() {
+			while (fetchedMeals.size < maxSuggestions) {
+				const meal = await fetchRandomMeal();
+				if (!fetchedMeals.has(meal.id)) {
+					fetchedMeals.add(meal.id);
+
+					const slide = document.createElement('div');
+					slide.className = 'swiper-slide';
+					slide.addEventListener('click', () => {
+						window.location.href = `/recipes/${meal.id}`;
+					});
+
+					const img = document.createElement('img');
+					img.className = 'custom-img';
+					img.src = meal.thumbnail;
+
+					const nameCon = document.createElement('div');
+					nameCon.className = 'suggestion-name-con';
+					nameCon.textContent = meal.name;
+
+					slide.appendChild(img);
+					slide.appendChild(nameCon);
+					suggestionWrapper.appendChild(slide);
+				}
+			}
+			swiper.update();
+		}
+
+		loadSuggestions();
+	});
+</script>
+
+

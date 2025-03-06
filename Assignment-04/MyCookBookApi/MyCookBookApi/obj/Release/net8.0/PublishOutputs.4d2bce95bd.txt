@@ -1,0 +1,11 @@
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\MyCookBookApi.exe
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\appsettings.Development.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\appsettings.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\MyCookBookApi.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\MyCookBookApi.deps.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\MyCookBookApi.runtimeconfig.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\MyCookBookApi.pdb
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\Microsoft.OpenApi.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApi\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
