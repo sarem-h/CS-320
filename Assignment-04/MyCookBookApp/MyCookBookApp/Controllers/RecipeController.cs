@@ -8,9 +8,9 @@ namespace MyCookBookApp.Controllers
 {
     public class RecipeController : Controller
     {
-        private readonly RecipeService _recipeService;
+        private readonly IRecipeService _recipeService;
 
-        public RecipeController(RecipeService recipeService)
+        public RecipeController(IRecipeService recipeService)
         {
             _recipeService = recipeService;
         }

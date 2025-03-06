@@ -4,11 +4,11 @@ namespace MyCookBookApi.Models
 {
     public class Recipe
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Category { get; set; }
-        public string Instructions { get; set; }
-        public string Thumbnail { get; set; }
-        public Dictionary<string, string> Ingredients { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
+        public string Instructions { get; set; } = string.Empty;
+        public string Thumbnail { get; set; } = string.Empty;
+        public Dictionary<string, string> Ingredients { get; set; } = new Dictionary<string, string>();
     }
 }

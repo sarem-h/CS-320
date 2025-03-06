@@ -2,7 +2,6 @@
     ViewData["Title"] = "Recipe Detail";
 }
 
-<h1 class="text-center my-4">Recipe Details</h1>
 <div id="recipe-details-container" class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -36,10 +35,11 @@
         function displayMealDetails(meal) {
             const container = document.getElementById('recipe-details-container');
             container.innerHTML = `
+                <h1 class="text-center my-4">Recipe Details</h1>
                 <div class="row">
                     <div class="col-md-6">
                         <h2 class="meal-title">${meal.name}</h2>
-                        <img src="${meal.thumbnail}" alt="${meal.name}" class="img-fluid rounded">
+                        <img class="meal-img" src="${meal.thumbnail}" alt="${meal.name}" class="img-fluid rounded">
                     </div>
                     <div class="col-md-6">
                         <h4 class="section-title">Instructions</h4>
@@ -96,13 +96,20 @@
         background-color: #f8f9fa;
     }
 
-    h1 {
-        color: #343a40;
+    .container {
+        position: absolute !important;
+        top: 150px;
     }
 
     .meal-title {
         color: #007bff;
         font-weight: bold;
+    }
+
+    .meal-img {
+        width: 100%;
+        height: 358px;
+        object-fit: cover;
     }
 
     .section-title {

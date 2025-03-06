@@ -3,6 +3,8 @@ using Moq;
 using MyCookBookApp.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyCookBookApp.Services;
+using MyCookBookApp.Models;
 
 namespace MyCookBookTests
 {
@@ -14,7 +16,8 @@ namespace MyCookBookTests
         {
             // Arrange: Create a mock logger and a HomeController instance
             var logger = new Mock<ILogger<HomeController>>();
-            var controller = new HomeController(logger.Object);
+            var recipeService = new Mock<IRecipeService>();
+            var controller = new HomeController(logger.Object, recipeService.Object);
 
             // Act: Call the Index action
             IActionResult result = controller.Index();
@@ -31,7 +34,8 @@ namespace MyCookBookTests
         {
             // Arrange: Create a mock logger and a HomeController instance
             var logger = new Mock<ILogger<HomeController>>();
-            var controller = new HomeController(logger.Object);
+            var recipeService = new Mock<IRecipeService>();
+            var controller = new HomeController(logger.Object, recipeService.Object);
 
             // Act: Call the About action
             IActionResult result = controller.About();
@@ -45,7 +49,8 @@ namespace MyCookBookTests
         {
             // Arrange: Create a mock logger and a HomeController instance
             var logger = new Mock<ILogger<HomeController>>();
-            var controller = new HomeController(logger.Object);
+            var recipeService = new Mock<IRecipeService>();
+            var controller = new HomeController(logger.Object, recipeService.Object);
 
             // Act: Call the Recipes action
             IActionResult result = controller.Recipes();
@@ -59,9 +64,10 @@ namespace MyCookBookTests
         {
             // Arrange: Create a mock logger and a HomeController instance
             var logger = new Mock<ILogger<HomeController>>();
-            var controller = new HomeController(logger.Object);
+            var recipeService = new Mock<IRecipeService>();
+            var controller = new HomeController(logger.Object, recipeService.Object);
 
-            int recipeId = 1; // Example recipe ID
+            string recipeId = "1"; // Example recipe ID
 
             // Act: Call the RecipeDetail action with the recipe ID
             IActionResult result = controller.RecipeDetail(recipeId);
@@ -74,6 +80,27 @@ namespace MyCookBookTests
 
             // Verify that the RecipeId is passed in ViewData
             Assert.Equal(recipeId, viewResult.ViewData["RecipeId"]);
+        }
+
+        [Fact]
+        public async Task AddRecipe_Post_ReturnsRedirectToRecipes()
+        {
+            // Arrange: Create a mock logger, mock recipe service, and a HomeController instance
+            var logger = new Mock<ILogger<HomeController>>();
+            var recipeService = new Mock<IRecipeService>();
+            var controller = new HomeController(logger.Object, recipeService.Object);
+
+            // Mock the AddRecipeAsync method to return a new Recipe
+            recipeService.Setup(service => service.AddRecipeAsync(It.IsAny<Recipe>()))
+                         .ReturnsAsync(new Recipe { Id = "1" });
+
+            // Act: Call the AddRecipe action with sample data
+            var result = await controller.AddRecipe("Pancakes", "Breakfast", "Mix and cook", "http://example.com/image.jpg", 
+                                                    new List<string> { "Flour" }, new List<string> { "1 cup" });
+
+            // Assert: Check if the returned result is a RedirectToActionResult
+            var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Recipes", redirectResult.ActionName);
         }
     }
 }

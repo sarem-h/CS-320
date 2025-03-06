@@ -1,0 +1,140 @@
+@* addRecipe.cshtml *@
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 35px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    .form-group button {
+        padding: 5px 15px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-group button:hover {
+        background-color: #c82333;
+    }
+
+    .ingredients-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .ingredients-group input {
+        width: 48%;
+    }
+
+    .add-ingredient-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #fff;
+        background-color: #dc3545;
+        cursor: pointer;
+        border-radius: 10px;
+        width: fit-content;
+        padding: 3px 8px;
+    }
+
+    .add-ingredient-button:hover {
+        background-color: #c82333;
+    }
+
+    .add-ingredient-button span {
+        font-size: 19px;
+        padding-right: 2px;
+    }
+
+    .add-ingredient-button p {
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+    }
+
+</style>
+
+<div class="form-container">
+    <form asp-action="AddRecipe" method="post" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Pancakes ..." required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" id="category" name="Category" placeholder="Lunch, Dessert, Snack ..." required>
+        </div>
+        <div class="form-group">
+            <label for="instructions">Instructions</label>
+            <textarea id="instructions" name="Instructions" rows="4" placeholder="Cook until golden brown on both sides ...." required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="thumbnail">Thumbnail URL</label>
+            <input type="url" id="thumbnail" name="Thumbnail" placeholder="https://..." required>
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <div id="ingredients-container">
+                <div class="ingredients-group">
+                    <input type="text" name="IngredientNames" placeholder="Ingredient (e.g., Flour)" required>
+                    <input type="text" name="IngredientQuantities" placeholder="Quantity (e.g., 1 cup)" required>
+                </div>
+            </div>
+            <div class="d-flex add-ingredient-button" onclick="addIngredient()">
+                <span class="d-flex material-symbols-outlined">
+                    add
+                </span>
+                <p>Ingredient</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="m-auto" type="submit">Add Recipe</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function addIngredient() {
+        const container = document.getElementById('ingredients-container');
+        const newIngredient = document.createElement('div');
+        newIngredient.className = 'ingredients-group';
+        newIngredient.innerHTML = `
+            <input type="text" name="IngredientNames" placeholder="Ingredient (e.g., Flour)" required>
+            <input type="text" name="IngredientQuantities" placeholder="Quantity (e.g., 1 cup)" required>
+        `;
+        container.appendChild(newIngredient);
+    }
+</script>
+

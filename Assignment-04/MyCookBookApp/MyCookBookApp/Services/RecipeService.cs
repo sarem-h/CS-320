@@ -3,11 +3,12 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using MyCookBookApp.Models;
 using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
+using System;
+using MyCookBookApp.Services;
 
 namespace MyCookBookApp.Services
 {
-    public class RecipeService
+    public class RecipeService : IRecipeService
     {
         private readonly HttpClient _httpClient;
 
@@ -23,6 +24,19 @@ namespace MyCookBookApp.Services
             var json = await response.Content.ReadAsStringAsync();
             var recipes = JsonConvert.DeserializeObject<List<Recipe>>(json);
             return recipes;
+        }
+
+        public async Task<Recipe> AddRecipeAsync(Recipe newRecipe)
+        {
+            newRecipe.Id = Guid.NewGuid().ToString(); // Generate a new Id
+            var json = JsonConvert.SerializeObject(newRecipe);
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            Console.WriteLine("Sending request to add recipe: {0}", json);
+            var response = await _httpClient.PostAsync("http://localhost:5085/api/recipe", content);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            //Console.WriteLine("Received response: {0}", responseContent);
+            response.EnsureSuccessStatusCode();
+            return newRecipe; // Return the updated recipe with the Id
         }
     }
 }

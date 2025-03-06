@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj": {}
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
+        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
         "projectName": "MyCookBookApi",
-        "projectPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
+        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj",
         "packagesPath": "C:\\Users\\sarem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\obj\\",
+        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApi\\MyCookBookApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
+        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
         "projectName": "MyCookBookApp",
-        "projectPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
+        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
         "packagesPath": "C:\\Users\\sarem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\obj\\",
+        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApp\\MyCookBookApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -156,14 +156,14 @@
         }
       }
     },
-    "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj": {
+    "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj",
+        "projectUniqueName": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj",
         "projectName": "MyCookBookTests",
-        "projectPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj",
+        "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookTests\\MyCookBookTests\\MyCookBookTests.csproj",
         "packagesPath": "C:\\Users\\sarem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookTests\\MyCookBookTests\\obj\\",
+        "outputPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookTests\\MyCookBookTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -184,11 +184,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {
-                "projectPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj"
+              "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj": {
+                "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApi\\MyCookBookApi\\MyCookBookApi.csproj"
               },
-              "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {
-                "projectPath": "C:\\Users\\sarem\\OneDrive\\Desktop\\school\\snhu\\cs-320-min\\Assignment-03\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj"
+              "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj": {
+                "projectPath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-04\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj"
               }
             }
           }

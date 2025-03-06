@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using MyCookBookApi.Models;
+using MyCookBookApi.Repositories;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using Microsoft.Extensions.Logging;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace MyCookBookApi.Controllers
 {
@@ -11,24 +12,38 @@ namespace MyCookBookApi.Controllers
     [Route("api/[controller]")]
     public class RecipeController : ControllerBase
     {
+        private readonly ILogger<RecipeController> _logger;
+        private readonly IRecipeRepository _recipeRepository;
+
+        public RecipeController(ILogger<RecipeController> logger, IRecipeRepository recipeRepository)
+        {
+            _logger = logger;
+            _recipeRepository = recipeRepository;
+        }
+
         [HttpGet]
         public IActionResult GetRecipes([FromQuery] string? search)
         {
-            var jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "recipes.json");
-            var jsonData = System.IO.File.ReadAllText(jsonFilePath);
-            var recipes = JsonSerializer.Deserialize<List<Recipe>>(jsonData);
-
-            if (!string.IsNullOrEmpty(search))
+            var recipes = _recipeRepository.GetRecipes(search);
+            if (recipes == null || !recipes.Any())
             {
-                var matchingRecipes = recipes.Where(r => r.Id == search || r.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
-                if (matchingRecipes.Any())
-                {
-                    return Ok(matchingRecipes);
-                }
-                return NotFound();
+                return Ok(new List<Recipe>()); // Return an empty list instead of NotFound
+            }
+            return Ok(recipes);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddRecipe([FromBody] Recipe newRecipe)
+        {
+            if (newRecipe == null || string.IsNullOrEmpty(newRecipe.Name) || string.IsNullOrEmpty(newRecipe.Category))
+            {
+                return BadRequest("Invalid recipe data.");
             }
 
-            return Ok(recipes);
+            await _recipeRepository.AddRecipeAsync(newRecipe);
+            _logger.LogInformation("Added new recipe: {0}", JsonSerializer.Serialize(newRecipe));
+
+            return CreatedAtAction(nameof(GetRecipes), new { id = newRecipe.Id }, newRecipe);
         }
     }
 }

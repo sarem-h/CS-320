@@ -13,8 +13,8 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod());
 });
 
-builder.Services.AddHttpClient<RecipeService>();
-builder.Services.AddScoped<RecipeService>();
+builder.Services.AddHttpClient<IRecipeService, RecipeService>();
+builder.Services.AddScoped<IRecipeService, RecipeService>();
 
 var app = builder.Build();
 
@@ -35,6 +35,11 @@ app.MapControllerRoute(
     name: "recipes",
     pattern: "Recipes",
     defaults: new { controller = "Home", action = "Recipes" });
+
+app.MapControllerRoute(
+    name: "addRecipe",
+    pattern: "addRecipe",
+    defaults: new { controller = "Home", action = "addRecipe" });
 
 app.MapControllerRoute(
     name: "about",
