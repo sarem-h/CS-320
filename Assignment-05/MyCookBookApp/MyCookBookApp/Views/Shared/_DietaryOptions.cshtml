@@ -1,0 +1,117 @@
+﻿@*_dietaryOptions.cshtml *@
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<style>
+	.dietary-options-con {
+		width: 100%;
+		row-gap: 13px;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		font-size: 20px;
+		font-family: 'Montserrat', sans-serif;
+		background-color: #f7f7f7;
+	}
+
+		.dietary-options-con .text-center {
+			text-align: center;
+			margin-bottom: 0;
+		}
+
+		.dietary-options-con .red-bar {
+			width: 100px;
+			height: 2px;
+			margin-top: 10px;
+			background-color: #eb0000;
+		}
+
+		.dietary-options-con .dietary-slide-con {
+			width: 100%;
+			padding-left: 18px;
+			margin-top: 14px;
+		}
+
+		.dietary-options-con .swiper-container {
+			overflow: hidden;
+		}
+
+		.dietary-options-con .swiper-wrapper {
+			height: fit-content
+		}
+
+		.dietary-options-con .swiper-slide {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			margin-right: 20px;
+			margin-bottom: 0px;
+			width: auto;
+			flex: 0 0 auto; /* Prevent slides from shrinking */
+		}
+
+			.dietary-options-con .swiper-slide div {
+				font-size: 11px;
+				font-family: 'Montserrat', sans-serif;
+				padding: 8px 18px;
+				border-radius: 1.5rem;
+				background-color: #f2d7d7;
+				cursor: pointer;
+				border: 1px solid transparent;
+			}
+
+				.dietary-options-con .swiper-slide div:hover {
+					border: 1px solid #000;
+				}
+
+		.dietary-options-con .selected-dietary-preference {
+			color: #fff;
+			background-color: #333 !important;
+		}
+
+			.dietary-options-con .selected-dietary-preference:hover {
+				border: 1px solid transparent !important;
+			}
+</style>
+
+<div class="d-flex flex-column justify-content-center align-items-center dietary-options-con">
+	<p class="text-center">Recipes based on dietary preferences</p>
+	<div class="red-bar"></div>
+	<div class="d-flex justify-content-center dietary-slide-con">
+		<div class="swiper-container">
+			<div class="swiper-wrapper dietary-options">
+				<div class="swiper-slide">
+					<div class="selected-dietary-preference">All</div>
+				</div>
+				<div class="swiper-slide">
+					<div>Vegetarian</div>
+				</div>
+				<div class="swiper-slide">
+					<div>Vegan</div>
+				</div>
+				<div class="swiper-slide">
+					<div>Gluten-Free</div>
+				</div>
+				<div class="swiper-slide">
+					<div>Dairy-Free</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				hide: true,
+			},
+			breakpoints: {
+				// Add any breakpoints if needed
+			}
+		});
+	});
+</script>

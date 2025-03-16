@@ -1,0 +1,9 @@
+﻿@*recipe.cshtml *@
+@model List<MyCookBookApp.Models.Recipe>
+
+@{
+    ViewData["Title"] = "recipes";
+}
+
+@Html.Partial("_DietaryOptions")
+@await Html.PartialAsync("~/Views/Recipe/recipeList.cshtml", Model)

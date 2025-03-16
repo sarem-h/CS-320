@@ -1,0 +1,11 @@
+.recipe-feed {}
+
+.recipe-feed p {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(15, 15, 15, .9);
+}
+
+.recipe-feed .sub-feed {
+    font-size: 13px;
+    margin: 10px;
+}

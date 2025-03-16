@@ -1,0 +1,48 @@
+﻿@* _CustomCollapse.cshtml *@
+@{
+    var menuLayout = "flex-column"; // Default layout
+    ViewData["SearchBarId"] = "search-bar-collapse";
+}
+
+<style>
+    .custom-collapse {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.8);
+        overflow-y: auto;
+        z-index: 1050;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 61px;
+    }
+
+        .custom-collapse.show {
+            display: flex;
+        }
+
+        .custom-collapse .custom-menu {
+            margin: 40px 0px 0px 37px;
+        }
+
+        .custom-collapse .background-image {
+            width: 100%;
+            height: 346px;
+            background-image: url('/img/kitchen-set.png');
+            background-size: cover;
+            background-position: center;
+            margin-top: 50px;
+        }
+</style>
+
+<div class="custom-collapse" id="customNavbar">
+    <div class="d-flex flex-column align-items-center">
+        @Html.Partial("_SearchBar")
+        @Html.Partial("_Menu", menuLayout)
+
+        <div class="background-image"></div>
+    </div>
+</div>

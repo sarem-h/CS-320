@@ -1,0 +1,11 @@
+﻿@* _About.cshtml *@
+@{
+	ViewData["Title"] = "about";
+}
+
+<link rel="stylesheet" href="~/css/about.css" />
+
+<div class="d-flex flex-row flex-wrap justify-content-center m-5 about-con">
+	@Html.Partial("_AboutContent")
+	@Html.Partial("_ExploreRecipe")
+</div>

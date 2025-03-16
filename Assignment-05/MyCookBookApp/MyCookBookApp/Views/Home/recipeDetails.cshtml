@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Recipe Detail";
+    var recipe = ViewData["Recipe"] as MyCookBookApp.Models.Recipe;
+}
+
+<head>
+    <!-- Add these lines in the <head> section -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/css/recipeDetails.css" />
+</head>
+
+<div id="recipe-details-container" class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @if (recipe != null)
+            {
+                <!-- Add this hidden element to store recipe data -->
+                <div id="recipe-data" style="display:none;">@Html.Raw(Json.Serialize(recipe))</div>
+                <h1 class="text-center my-4">Recipe Details</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="meal-title">@recipe.Name</h2>
+                        <img class="meal-img" src="@recipe.Thumbnail" alt="@recipe.Name" class="img-fluid rounded">
+                        <div class="mt-2 text-center">
+                            <button id="edit-recipe-button" class="btn btn-primary mt-3 shadow-none mr-2" data-toggle="modal" data-target="#editRecipeModal">Edit Recipe</button>
+                            <form method="post" action="/Home/DeleteRecipe" style="display:inline;">
+                                <input type="hidden" name="id" value="@recipe.Id" />
+                                <button type="submit" class="btn btn-danger mt-3 shadow-none">Delete Recipe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="section-title">Instructions</h4>
+                        <p class="meal-instructions">@recipe.Instructions</p>
+                        <h4 class="section-title">Ingredients</h4>
+                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                            <table class="table table-striped">
+                                @if (recipe.Ingredients != null)
+                                {
+                                    @foreach (var ingredient in recipe.Ingredients)
+                                    {
+                                        <tr>
+                                            <td>@ingredient.Value</td>
+                                            <td>@ingredient.Key</td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan="2">No ingredients available.</td></tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p>Meal not found.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Edit Recipe Modal -->
+<div class="modal fade" id="editRecipeModal" tabindex="-1" role="dialog" aria-labelledby="editRecipeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editRecipeModalLabel">Edit Recipe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="edit-recipe-form-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/recipeDetails.js"></script>
