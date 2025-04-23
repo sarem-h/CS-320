@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Delius+Swash+Caps&display=swap');
+
+.about-content {
+	width: 700px;
+	font-family: 'Montserrat', sans-serif;
+	margin-right: 80px;
+}
+
+.about-content h2 {
+	color: #27536d;
+}
+
+.about-content h4 {
+	font-size: 22px;
+	font-family: "Bona Nova SC", serif;
+	font-style: italic;
+	text-align: center;
+}
+
+.about-content p {
+	font-size: 19px;
+	font-family: "Bona Nova SC", serif;
+}
+
+.about-content img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 35px;
+}

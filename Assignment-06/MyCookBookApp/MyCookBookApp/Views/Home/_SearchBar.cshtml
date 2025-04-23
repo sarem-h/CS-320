@@ -1,0 +1,21 @@
+﻿@* _SearchBar.cshtml *@
+@{
+    var searchBarId = !string.IsNullOrEmpty(ViewData["SearchBarId"] as string) ? ViewData["SearchBarId"] : "search-bar";
+    var inputId = $"{searchBarId}-input";
+    var dropdownId = $"{searchBarId}-dropdown";
+}
+
+<link rel="stylesheet" href="~/css/_SearchBar.css" />
+
+<form class="d-flex justify-content-center align-items-center search-bar-form position-relative" id="@searchBarId" data-input-id="@inputId" data-dropdown-id="@dropdownId">
+    <span class="material-symbols-outlined dining-icon">
+        ramen_dining
+    </span>
+    <input id="@inputId" class="form-control me-2 no-transition border-bottom-only bg-transparent custom-font" type="search" placeholder="search recipes, etc ..." aria-label="Search">
+    <span class="d-flex material-symbols-outlined search-icon">
+        search
+    </span>
+    <ul class="dropdown-menu" id="@dropdownId"></ul>
+</form>
+
+<script src="~/js/_SearchBar.js"></script>

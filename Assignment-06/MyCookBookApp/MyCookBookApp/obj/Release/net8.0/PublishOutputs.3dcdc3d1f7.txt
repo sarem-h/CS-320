@@ -1,0 +1,10 @@
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\MyCookBookApp.exe
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\appsettings.Development.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\appsettings.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\MyCookBookApp.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\MyCookBookApp.deps.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\MyCookBookApp.runtimeconfig.json
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\MyCookBookApp.pdb
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\sarem\source\repos\cs-320\assignment-03\MyCookBookApp\publish\Microsoft.Extensions.Options.dll

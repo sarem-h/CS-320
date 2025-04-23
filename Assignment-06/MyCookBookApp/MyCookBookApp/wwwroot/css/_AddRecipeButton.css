@@ -1,0 +1,15 @@
+.add-recipe-icon {
+    position: fixed;
+    bottom: 55px;
+    right: 40px;
+    font-size: 40px;
+    color: #fff;
+    background-color: #dc3545;
+    cursor: pointer;
+    border-radius: 20%;
+    padding: 6px;
+}
+
+.add-recipe-icon:hover {
+    background-color: #c82333;
+}

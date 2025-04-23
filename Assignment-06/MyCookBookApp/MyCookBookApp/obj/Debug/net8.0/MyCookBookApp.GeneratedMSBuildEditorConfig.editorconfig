@@ -1,0 +1,129 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MyCookBookApp
+build_property.RootNamespace = MyCookBookApp
+build_property.ProjectDir = C:\Users\sarem\source\repos\cs-320\Assignment-06\MyCookBookApp\MyCookBookApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\sarem\source\repos\cs-320\Assignment-06\MyCookBookApp\MyCookBookApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/about.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/addRecipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhZGRSZWNpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/recipeDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZWNpcGVEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/recipes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZWNpcGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_AboutContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQWJvdXRDb250ZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_AddRecipeButton.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQWRkUmVjaXBlQnV0dG9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_ExploreRecipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRXhwbG9yZVJlY2lwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRm9vdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_MainSuggestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTWFpblN1Z2dlc3Rpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_RecipeFeed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUmVjaXBlRmVlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_SearchBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfU2VhcmNoQmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_Slogan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfU2xvZ2FuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Home/_TopBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVG9wQmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Recipe/recipeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXHJlY2lwZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Recipe/ssrRecipeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXHNzclJlY2lwZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Shared/_CustomCollapse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DdXN0b21Db2xsYXBzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Shared/_DietaryOptions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EaWV0YXJ5T3B0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Shared/_Logo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Shared/_MainSuggestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluU3VnZ2VzdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sarem/source/repos/cs-320/Assignment-06/MyCookBookApp/MyCookBookApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

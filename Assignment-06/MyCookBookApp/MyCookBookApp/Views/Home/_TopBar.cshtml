@@ -1,0 +1,29 @@
+﻿@* _TopBar.cshtml *@
+@{
+	var menuLayout = "flex-row"; // Default layout
+}
+
+<link rel="stylesheet" href="~/css/_TopBar.css" />
+
+<nav class="navbar navbar-light bg-transparent custom-top-bar py-3 mt-2">
+	<div class="container-fluid custom-padding" id="topBarContainer">
+		<div class="d-flex justify-content-between w-100">
+			@Html.Partial("_Logo")
+			<span class="d-lg-none material-symbols-outlined custom-toggler" onclick="toggleNavbar()" aria-label="Toggle navigation">
+				menu
+			</span>
+			<div class="d-none d-lg-flex w-100 align-items-center" id="menuContainer">
+				@Html.Partial("_Menu", menuLayout)
+				@Html.Partial("_SearchBar")
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+@Html.Partial("_CustomCollapse")
+
+<input type="hidden" id="menuLayout" value="@menuLayout" />
+
+<script src="~/js/_TopBar.js"></script>

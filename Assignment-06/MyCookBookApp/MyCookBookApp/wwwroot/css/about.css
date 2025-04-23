@@ -1,0 +1,9 @@
+@media (max-width: 1117px) {
+    .about-con .about-content {
+        margin-right: 0 !important;
+    }
+
+    .about-con .explore-recipe-con {
+        width: 778px;
+    }
+}

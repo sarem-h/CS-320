@@ -1,0 +1,13 @@
+.custom-menu {
+    /* placeholder */
+}
+
+.custom-menu .custom-font {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(15,15,15,.5);
+}
+
+.custom-menu .navbar-nav .nav-item {
+    margin-right: 20px;
+}

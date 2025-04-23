@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LK25+XBDdkY=",
+  "dgSpecHash": "DGuomUx2M9E=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sarem\\source\\repos\\cs-320\\Assignment-05\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
+  "projectFilePath": "C:\\Users\\sarem\\source\\repos\\cs-320\\assignment-05\\MyCookBookApp\\MyCookBookApp\\MyCookBookApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sarem\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.3.0\\microsoft.aspnetcore.cors.2.3.0.nupkg.sha512",
     "C:\\Users\\sarem\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",

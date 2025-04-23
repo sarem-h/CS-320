@@ -1,0 +1,45 @@
+@* addRecipe.cshtml *@
+
+<link rel="stylesheet" href="~/css/addRecipe.css" />
+
+<div class="form-container">
+    <form asp-action="AddRecipe" method="post" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Pancakes ..." required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" id="category" name="Category" placeholder="Lunch, Dessert, Snack ..." required>
+        </div>
+        <div class="form-group">
+            <label for="instructions">Instructions</label>
+            <textarea id="instructions" name="Instructions" rows="4" placeholder="Cook until golden brown on both sides ...." required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="thumbnail">Thumbnail URL</label>
+            <input type="url" id="thumbnail" name="Thumbnail" placeholder="https://..." required>
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <div id="ingredients-container">
+                <div class="ingredients-group">
+                    <input type="text" name="IngredientNames" placeholder="Ingredient (e.g., Flour)" required>
+                    <input type="text" name="IngredientQuantities" placeholder="Quantity (e.g., 1 cup)" required>
+                </div>
+            </div>
+            <div class="d-flex add-ingredient-button" onclick="addIngredient()">
+                <span class="d-flex material-symbols-outlined">
+                    add
+                </span>
+                <p>Ingredient</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="m-auto" type="submit">Add Recipe</button>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/addRecipe.js"></script>
+
